@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:background="#33463A"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txt2x2"
+        android:layout_width="100dp"
+        android:textSize="25sp"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="2x2"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textColor="#E2E5DE"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/txt3x3"
+        android:layout_width="100dp"
+        android:textSize="25sp"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:fontFamily="@font/montserrat"
+        android:text="3x3"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textColor="#E2E5DE"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/txt4x4"
+        android:layout_width="100dp"
+        android:textSize="25sp"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="4x4"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textColor="#E2E5DE"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/txtPyra"
+        android:layout_width="200dp"
+        android:textSize="25sp"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="Pyraminx"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textColor="#E2E5DE"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/txtSkewb"
+        android:layout_width="100dp"
+        android:textSize="25sp"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="Skewb"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textColor="#E2E5DE"
+        android:textStyle="bold"
+        />
+
+
+
+</LinearLayout>
