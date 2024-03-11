@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextInputLayoutHintAppearance" parent="TextAppearance.Design.Hint">
+        <item name="android:textColor">@color/black</item> <!-- Set your desired hint color -->
+    </style>
+
+</resources>

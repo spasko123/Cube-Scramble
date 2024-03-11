@@ -76,6 +76,20 @@
         android:textColor="#E2E5DE"
         android:textStyle="bold"
         />
+    <TextView
+        android:id="@+id/txtMore"
+        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="More coming soon"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:textColor="#ABACA9"
+        />
 
 
 

@@ -5,11 +5,13 @@ import android.animation.ObjectAnimator
 import android.app.Dialog
 import android.content.Intent
 import android.media.MediaPlayer
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
@@ -28,11 +30,15 @@ class MainActivity : AppCompatActivity() {
     lateinit var txtCubeType: TextView
     lateinit var imgList: ImageView
     var mediaPlayer: MediaPlayer? = null
-    private val handler = Handler()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = resources.getColor(R.color.status_bar_color, theme)
+        }
+
 
         txtScramble = findViewById(R.id.txtScramble)
         btnNewScramble = findViewById(R.id.btnNewScramble)
@@ -42,8 +48,34 @@ class MainActivity : AppCompatActivity() {
         imgList = findViewById(R.id.imgList)
 
         imgList.setOnClickListener(){
-            val intent = Intent(this, ListActivity::class.java)
-            startActivity(intent)
+            val dialog = Dialog(this)
+            dialog.setContentView(R.layout.dialog_list)
+            val edtxScrambles = dialog.findViewById<EditText>(R.id.edtxScrambles)
+            val txtCubeType = dialog.findViewById<TextView>(R.id.txtCubeType)
+            val btnGenerateScrambles = dialog.findViewById<Button>(R.id.btnGenerateScrambles)
+            txtCubeType.text = "Current cube type: ${cubeType}"
+
+            btnGenerateScrambles.setOnClickListener(){
+                val numberOfScrambles: String = edtxScrambles.text.toString()
+                if(numberOfScrambles.isEmpty()){
+                    edtxScrambles.error = "You haven't typed anything"
+                }
+                else{
+//                    val intNumberOfScrambles: Int = numberOfScrambles.toInt()
+//                    for (i in 0 until intNumberOfScrambles){
+//                       val currentScramble: String = checkCubeType(cubeType)
+//                        scramblesList.add(currentScramble)
+//                    }
+                    val intent = Intent(this, ListActivity::class.java)
+//                    intent.putStringArrayListExtra("scramblesList", ArrayList(scramblesList))
+                    intent.putExtra("cubeType", cubeType)
+                    intent.putExtra("numberOfScrambles", numberOfScrambles)
+                    startActivity(intent)
+                }
+            }
+
+
+            dialog.show()
         }
 
         scramble = generateRandomScrambleFor3x3()
