@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     var randomMove: String = ""
     var lastMove: String = ""
     var scramble: String = ""
-    var cubeType: Int = 2
+    var cubeType: String = "3x3"
     lateinit var txtScramble: TextView
     lateinit var btnNewScramble: Button
     lateinit var conLayoutNavBar: ConstraintLayout
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         val txtPyra: TextView = customDialog.findViewById(R.id.txtPyra)
 
         txt2x2.setOnClickListener() {
-            cubeType = 1
+            cubeType = "2x2"
             scramble = checkCubeType(cubeType)
             animateTextChange(scramble)
             customDialog.dismiss()
@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         txt3x3.setOnClickListener() {
-            cubeType = 2
+            cubeType = "3x3"
             scramble = checkCubeType(cubeType)
             animateTextChange(scramble)
             customDialog.dismiss()
@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
             imgArrowDropDown.setImageResource(R.drawable.down_arrow)
         }
         txt4x4.setOnClickListener() {
-            cubeType = 3
+            cubeType = "4x4"
             scramble = checkCubeType(cubeType)
             animateTextChange(scramble)
             customDialog.dismiss()
@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
             imgArrowDropDown.setImageResource(R.drawable.down_arrow)
         }
         txtSkewb.setOnClickListener() {
-            cubeType = 8
+            cubeType = "Skewb"
             scramble = checkCubeType(cubeType)
             animateTextChange(scramble)
             customDialog.dismiss()
@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         txtPyra.setOnClickListener() {
-            cubeType = 7
+            cubeType = "Pyraminx"
             scramble = checkCubeType(cubeType)
             animateTextChange(scramble)
             customDialog.dismiss()
@@ -124,24 +124,24 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun checkCubeType(cubeType: Int): String{
-        if(cubeType == 2){
+    fun checkCubeType(cubeType: String): String{
+        if(cubeType == "3x3"){
             var scramble = generateRandomScrambleFor3x3()
             return scramble
         }
-        else if(cubeType == 1){
+        else if(cubeType == "2x2"){
             var scramble = generateRandomScrambleFor2x2()
             return scramble
         }
-        else if(cubeType == 3){
+        else if(cubeType == "4x4"){
             var scramble = generateRandomScrambleFor4x4()
             return scramble
         }
-        else if(cubeType == 8){
+        else if(cubeType == "Skewb"){
             var scramble = generateRandomScrambleForSkewb()
             return scramble
         }
-        else if(cubeType == 7){
+        else if(cubeType == "Pyraminx"){
             var scramble = generateRandomScrambleForPyraminx()
             return scramble
         }
