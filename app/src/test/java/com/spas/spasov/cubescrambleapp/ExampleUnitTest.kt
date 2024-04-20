@@ -1,4 +1,4 @@
-package com.spas.spasov.cubescramble
+package com.spas.spasov.cubescrambleapp
 
 import org.junit.Test
 

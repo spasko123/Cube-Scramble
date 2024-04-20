@@ -1,4 +1,4 @@
-package com.spas.spasov.cubescramble
+package com.spas.spasov.cubescrambleapp
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
@@ -8,12 +8,9 @@ import android.media.MediaPlayer
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 

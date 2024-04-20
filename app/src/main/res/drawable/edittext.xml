@@ -1,6 +1,6 @@
 <!-- edittext_border_black.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
-    <stroke android:width="3dp" android:color="#29332D" />
+    <stroke android:width="2dp" android:color="#29332D" />
     <corners android:radius="8dp" />
     <solid android:color="#FFFFFF" />
 </shape>

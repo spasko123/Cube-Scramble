@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.spas.spasov.cubescramble"
+    namespace = "com.spas.spasov.cubescrambleapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.spas.spasov.cubescramble"
+        applicationId = "com.spas.spasov.cubescrambleapp"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
