@@ -1,5 +1,8 @@
 package com.spas.spasov.cubescramble
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 class ListActivity : AppCompatActivity() {
 
     lateinit var imgBack: ImageView
-    lateinit var imgDownload: ImageView
+    lateinit var imgCopy: ImageView
     lateinit var txtCubeType: TextView
     var randomMove: String = ""
     var lastMove: String = ""
@@ -28,12 +31,16 @@ class ListActivity : AppCompatActivity() {
         }
 
         imgBack = findViewById(R.id.imgBack)
-        imgDownload = findViewById(R.id.imgDownload)
+        imgCopy = findViewById(R.id.imgCopy)
         txtCubeType = findViewById(R.id.txtCubeType)
 
         imgBack.setOnClickListener(){
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+        }
+
+        imgCopy.setOnClickListener(){
+            copyScramblesToClipboard(scramblesList)
         }
 
         val cubeType = intent.getStringExtra("cubeType").toString()
@@ -53,6 +60,20 @@ class ListActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
     }
 
+    fun copyScramblesToClipboard(strings: List<String>) {
+        val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val stringBuilder = StringBuilder()
+
+        strings.forEachIndexed { index, string ->
+            stringBuilder.append("${index + 1}. $string\n")
+        }
+
+        val clip = ClipData.newPlainText("Strings", stringBuilder.toString())
+        clipboardManager.setPrimaryClip(clip)
+
+        // Optionally, you can show a toast message to indicate successful copying
+        // Toast.makeText(this, "Strings copied to clipboard", Toast.LENGTH_SHORT).show()
+    }
     fun checkCubeType(cubeType: String): String{
         if(cubeType == "3x3"){
             var scramble = generateRandomScrambleFor3x3()

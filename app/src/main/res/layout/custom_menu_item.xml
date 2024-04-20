@@ -9,7 +9,6 @@
     android:paddingTop="8dp"
     android:paddingBottom="8dp">
 
-    <!-- Adjust the layout as needed for your specific content -->
     <TextView
         android:id="@+id/menuItemText"
         android:layout_width="wrap_content"

@@ -33,14 +33,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imgDownload"
+        android:id="@+id/imgCopy"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/txtCubeType"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txtCubeType"
-        app:srcCompat="@drawable/baseline_download_24" />
+        app:srcCompat="@drawable/baseline_content_copy_24" />
 
     <ImageView
         android:id="@+id/imgBack"
