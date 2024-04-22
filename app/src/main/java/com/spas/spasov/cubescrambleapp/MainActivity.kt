@@ -193,7 +193,20 @@ class MainActivity : AppCompatActivity() {
             lastMove = randomMove
             val count2 = count.random()
 
-            val randomRotation = if (Math.random() < 0.5) "" else "'"
+            var randomRotation = ""
+
+            // Generate a random number between 0 and 2
+            val randomNumber = (0..2).random()
+
+            // Set randomRotation based on the random number
+            when (randomNumber) {
+                // 1/3 chance for prime (')
+                0 -> randomRotation = "'"
+                // 2/3 chance for empty string
+                1 -> randomRotation = ""
+            }
+
+
             stringBuilder.append("$randomMove$count2$randomRotation ")
         }
         return stringBuilder.toString().trim()
